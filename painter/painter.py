@@ -31,7 +31,7 @@ class Painter(object):
 
         styled_text = combined_text
         for applied_style in self.applied_styles:
-            style = self.styles[applied_style]
+            style = getattr(self.styles, applied_style)
             styled_text = style.open + styled_text + style.close
         return styled_text
 

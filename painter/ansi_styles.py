@@ -46,6 +46,21 @@ class Style(object):
         return '%s<Style>%s' % (self.open, self.close)
 
 
-styles = {}
-for key, (open_code, close_code) in codes.items():
-    styles[key] = Style(open_code, close_code)
+class Styler(object):
+    def __init__(self):
+        self.styles = {}
+        for key, (open_code, close_code) in codes.items():
+            self.styles[key] = Style(open_code, close_code)
+
+    def __contains__(self, key):
+        return key in self.styles
+
+    def __getattr__(self, name):
+        if name not in self.styles:
+            raise AttributeError(
+                "'Styler' object has no attribute '%s'" % name
+            )
+
+        return self.styles[name]
+
+styles = Styler()

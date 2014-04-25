@@ -69,7 +69,7 @@ def test_paint_enabled_does_not_output_colors_when_manually_disabled():
 
 
 def test_paint_styles_exposes_the_styles_as_ansi_escape_codes():
-    assert paint.styles['red'].open == '\x1b[31m'
+    assert paint.styles.red.open == '\x1b[31m'
 
 
 def test_paint_strip_color_strips_color_from_string():
