@@ -2,6 +2,8 @@ from nose.tools import raises
 
 from painter.painter import paint
 
+paint.enabled = True
+
 
 def test_paint_style_string():
     assert paint.underline('foo') == '\x1b[4mfoo\x1b[24m'

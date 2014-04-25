@@ -5,12 +5,15 @@ from .has_color import has_color
 
 class Painter(object):
 
-    def __init__(self, applied_styles=[], enabled=True):
+    def __init__(self, applied_styles=[], enabled=None):
         self.applied_styles = applied_styles
-        self.enabled = enabled
         self.styles = styles
         self.strip_color = strip_ansi
-        self.has_color = has_color
+        self.supports_color = has_color
+        if enabled is None:
+            self.enabled = self.supports_color
+        else:
+            self.enabled = enabled
 
     def __getattr__(self, name):
         if name not in self.styles:
