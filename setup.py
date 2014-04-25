@@ -9,7 +9,7 @@ setup(
     author='Fotis Gimian',
     author_email='fgimiansoftware@gmail.com',
     description=(
-        'Your own personal painter to color text in your terminal.'
+        'Your own expressive painter who colors text in your terminal.'
     ),
     packages=['painter'],
     zip_safe=False,

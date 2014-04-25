@@ -1,5 +1,5 @@
 # Painter #
-*Your own personal painter to color text in your terminal*
+*Your own expressive painter who colors text in your terminal*
 
 [![Build Status](https://travis-ci.org/fgimian/painter.png?branch=master)](https://travis-ci.org/fgimian/painter)
 
