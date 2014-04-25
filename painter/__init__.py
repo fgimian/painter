@@ -1,1 +1,1 @@
-from painter import painter  # noqa
+from .painter import paint  # noqa
