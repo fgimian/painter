@@ -4,6 +4,7 @@ codes = {
     'bold': (1, 22),
     'italic': (3, 23),
     'underline': (4, 24),
+    'blink': (5, 25),
     'inverse': (7, 27),
     'strikethrough': (9, 29),
 
