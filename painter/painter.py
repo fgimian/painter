@@ -1,3 +1,5 @@
+import sys
+
 from .ansi_styles import ansi
 from .strip_ansi import strip_ansi
 from .has_color import has_color
@@ -55,5 +57,10 @@ class Painter(object):
             'Painter(applied_styles=%r, enabled=%r)' %
             (self.applied_styles, self.enabled)
         )
+
+# Enable ANSI coloring on Windows using Colorama
+if sys.platform == 'win32':  # pragma: nocover
+    import colorama
+    colorama.init()
 
 paint = Painter()

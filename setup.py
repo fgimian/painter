@@ -31,7 +31,7 @@ And now, go ahead and use it to output colors to your terminal:
     print('Welcome to Painter!', paint.red('I can paint things red'),
           paint.blue('and blue'))
 
-    # Chaining colors
+    # Chaining colors and styles
     print(paint.blue.on_red.bold.underline('and far more complex combos too'))
     print()
 
@@ -57,12 +57,18 @@ And now, go ahead and use it to output colors to your terminal:
     paint.enabled = True
     print('Hope you have a', paint.blue('lovely day!'), paint.green(':)'))
 """
+import sys
 from setuptools import setup
+
+# Colorama is needed on Windows to enable ANSI coloring
+install_requires = []
+if sys.platform == 'win32':
+    install_requires.append('colorama')
 
 
 setup(
     name='painter',
-    version='0.2',
+    version='0.3-dev',
     url='https://github.com/fgimian/painter',
     license='MIT',
     author='Fotis Gimian',
@@ -78,6 +84,7 @@ setup(
         ]
     },
     zip_safe=False,
+    install_requires=install_requires,
     setup_requires=[
         'nose',
         'coverage',
