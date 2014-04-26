@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='painter',
-    version='0.1',
+    version='0.2-dev',
     url='https://github.com/fgimian/painter',
     license='MIT',
     author='Fotis Gimian',
