@@ -2,6 +2,7 @@
 *Your own expressive painter who colors text in your terminal*
 
 [![Build Status](https://travis-ci.org/fgimian/painter.png?branch=master)](https://travis-ci.org/fgimian/painter)
+[![Coverage Status](https://coveralls.io/repos/fgimian/painter/badge.png)](https://coveralls.io/r/fgimian/painter)
 
 ![Painter Logo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_logo.png)
 

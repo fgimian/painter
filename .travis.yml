@@ -5,12 +5,20 @@ python:
   - 3.3
   - pypy
 
+install:
+  # Install the Coveralls library
+  - pip install coveralls
+
 script:
   # Validate code with flake8
   - python setup.py flake8
 
   # Run all application tests
   - python setup.py nosetests
+
+after_success:
+  # Send coverage statistics to Coveralls
+  coveralls
 
 notifications:
   # Disable email notifications if something fails
