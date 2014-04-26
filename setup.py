@@ -59,12 +59,29 @@ And now, go ahead and use it to output colors to your terminal:
 """
 import sys
 from setuptools import setup
+from setuptools.command.test import test as TestCommand
 
 # Colorama is needed on Windows to enable ANSI coloring
 install_requires = []
 if sys.platform == 'win32':
     install_requires.append('colorama')
 
+
+# Inspired by the example at https://pytest.org/latest/goodpractises.html
+class NoseTestCommand(TestCommand):
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        # Override argv to be as though we are running nosetests directly
+        import sys
+        sys.argv = ['nosetests']
+
+        # Run the nose tests
+        import nose
+        nose.run_exit()
 
 setup(
     name='painter',
@@ -85,12 +102,13 @@ setup(
     },
     zip_safe=False,
     install_requires=install_requires,
-    setup_requires=[
+    tests_require=[
         'nose',
         'coverage',
         'mock',
         'flake8'
     ],
+    cmdclass={'test': NoseTestCommand},
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
@@ -108,5 +126,5 @@ setup(
         'Programming Language :: Python :: Implementation :: CPython',
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Terminals'
-    ],
+    ]
 )
