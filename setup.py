@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='painter',
-    version='0.2-dev',
+    version='0.2',
     url='https://github.com/fgimian/painter',
     license='MIT',
     author='Fotis Gimian',
@@ -25,7 +25,7 @@ setup(
         'flake8'
     ],
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',

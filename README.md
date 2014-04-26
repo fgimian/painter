@@ -17,7 +17,7 @@ Painter is fully tested with 100% coverage and also completely Flake8 compilant 
 Install Painter in your virtualenv as follows:
 
 ``` bash
-pip install git+git://github.com/fgimian/painter.git
+pip install painter
 ```
 
 And now, go ahead and use it to output colors to your terminal:
