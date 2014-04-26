@@ -24,4 +24,4 @@ def test_strip_ansi_color_cli():
         'python -m painter.strip_ansi_cli',
         shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     ).communicate()
-    assert stdout == 'foofoo\n'
+    assert stdout == b'foofoo\n'
