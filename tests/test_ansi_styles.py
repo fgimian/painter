@@ -10,7 +10,7 @@ def test_return_ansi_escape_codes():
 
 
 def test_return_ansi_repr():
-    assert repr(ansi.green) == '\x1b[32m<Style>\x1b[39m'
+    assert repr(ansi.green) == '\x1b[32m<AnsiStyle>\x1b[39m'
 
 
 @raises(AttributeError)

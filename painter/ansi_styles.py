@@ -32,7 +32,7 @@ ANSI_CODES = OrderedDict([
 ])
 
 
-class Style(object):
+class AnsiStyle(object):
     def __init__(self, open_code, close_code):
         self.open_code = open_code
         self.close_code = close_code
@@ -46,14 +46,14 @@ class Style(object):
         return '\x1b[%im' % self.close_code
 
     def __repr__(self):
-        return '%s<Style>%s' % (self.open, self.close)
+        return '%s<AnsiStyle>%s' % (self.open, self.close)
 
 
-class Styler(object):
+class AnsiStyler(object):
     def __init__(self):
         self.styles = OrderedDict()
         for key, (open_code, close_code) in ANSI_CODES.items():
-            self.styles[key] = Style(open_code, close_code)
+            self.styles[key] = AnsiStyle(open_code, close_code)
 
     def __contains__(self, key):
         return key in self.styles
@@ -61,9 +61,9 @@ class Styler(object):
     def __getattr__(self, name):
         if name not in self.styles:
             raise AttributeError(
-                "'Styler' object has no attribute '%s'" % name
+                "'AnsiStyler' object has no attribute '%s'" % name
             )
 
         return self.styles[name]
 
-ansi = Styler()
+ansi = AnsiStyler()
