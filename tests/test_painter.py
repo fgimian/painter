@@ -55,7 +55,7 @@ def test_paint_raises_exception_on_invalid_color():
 
 def test_paint_return_repr():
     assert (
-        paint.red.on_blue.bold.underline.__repr__() ==
+        repr(paint.red.on_blue.bold.underline) ==
         "<Painter (['red', 'on_blue', 'bold', 'underline'])>"
     )
 

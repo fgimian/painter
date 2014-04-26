@@ -1,6 +1,6 @@
 from nose.tools import raises
 
-from painter.ansi_styles import styles as ansi
+from painter.ansi_styles import ansi
 
 
 def test_return_ansi_escape_codes():
@@ -10,7 +10,7 @@ def test_return_ansi_escape_codes():
 
 
 def test_return_ansi_repr():
-    assert ansi.green.__repr__() == '\x1b[32m<Style>\x1b[39m'
+    assert repr(ansi.green) == '\x1b[32m<Style>\x1b[39m'
 
 
 @raises(AttributeError)

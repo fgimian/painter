@@ -64,4 +64,4 @@ class Styler(object):
 
         return self.styles[name]
 
-styles = Styler()
+ansi = Styler()
