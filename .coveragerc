@@ -1,4 +1,6 @@
 [report]
 omit =
     */python?.?/*
+    */lib_pypy/_*.py
+    */site-packages/mock.py
     */site-packages/nose/*
