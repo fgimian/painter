@@ -3,6 +3,9 @@
 
 [![Build Status](https://travis-ci.org/fgimian/painter.png?branch=master)](https://travis-ci.org/fgimian/painter)
 [![Coverage Status](https://coveralls.io/repos/fgimian/painter/badge.png)](https://coveralls.io/r/fgimian/painter)
+[![License](https://pypip.in/license/painter/badge.png)](https://pypi.python.org/pypi/painter/)
+[![Latest Version](https://pypip.in/version/painter/badge.png)](https://pypi.python.org/pypi/painter/)
+[![Downloads](https://pypip.in/download/painter/badge.png)](https://pypi.python.org/pypi/painter/)
 
 ![Painter Logo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_logo.png)
 
@@ -31,7 +34,7 @@ from painter import paint
 print('Welcome to Painter!', paint.red('I can paint things red'),
       paint.blue('and blue'))
 
-# Chaining colors
+# Chaining colors and styles
 print(paint.blue.on_red.bold.underline('and far more complex combos too'))
 print()
 
