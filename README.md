@@ -8,7 +8,7 @@
 
 Awesome artwork provided courtesy of [Open Clip Art Library](http://openclipart.org/detail/174634/painter-penguin-by-moini-174634)
 
-Painter is heavily based on the awesome [chalk](https://github.com/sindresorhus/chalk) library for Node.js along with all its dependences.  However, painter attempts to provide an even more expressive API which reads like English.
+Painter is an ANSI coloring library heavily based on the awesome [chalk](https://github.com/sindresorhus/chalk) library for Node.js along with all its dependences.  However, painter attempts to provide an even more expressive API which reads like English.
 
 Painter is fully tested with 100% coverage and also completely Flake8 compilant too!
 
