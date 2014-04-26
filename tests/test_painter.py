@@ -59,6 +59,18 @@ def test_paint_repr():
     assert eval(repr(theme)) == theme
 
 
+def test_paint_dir():
+    for item in [
+        '__class__', '__getattr__', 'applied_styles', 'enabled', 'strip_color',
+        'black', 'inverse', 'italic', 'on_blue', 'on_cyan'
+    ]:
+        yield check_item_in_paint, item
+
+
+def check_item_in_paint(item):
+    return item in dir(paint)
+
+
 def test_paint_doesnt_output_escape_codes_if_the_input_is_empty():
     assert paint.red() == ''
 

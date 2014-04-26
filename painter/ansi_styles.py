@@ -74,8 +74,15 @@ class AnsiStyler(object):
             )
         return self.styles[name]
 
+    def __dir__(self):
+        return dir(type(self)) + list(self.__dict__) + list(self.styles)
+
     def __eq__(self, other):
         return self.styles == other.styles
+
+    def __iter__(self):
+        for style in self.styles:
+            yield style
 
     def __repr__(self):
         return 'AnsiStyler()'

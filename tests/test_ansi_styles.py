@@ -14,6 +14,18 @@ def test_ansi_style_repr():
     assert eval(repr(ansi.green)) == ansi.green
 
 
+def test_ansi_style_dir():
+    for item in [
+        '__class__', '__getattr__',  'styles',
+        'black', 'inverse', 'italic', 'on_blue', 'on_cyan'
+    ]:
+        yield check_item_in_ansi_dir, item
+
+
+def check_item_in_ansi_dir(item):
+    return item in dir(ansi)
+
+
 @raises(AttributeError)
 def test_ansi_raises_exception_on_invalid_color():
     ansi.invalid_color

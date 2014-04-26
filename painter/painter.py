@@ -38,6 +38,9 @@ class Painter(object):
             styled_text = style.open + styled_text + style.close
         return styled_text
 
+    def __dir__(self):
+        return dir(type(self)) + list(self.__dict__) + list(paint.styles)
+
     def __eq__(self, other):
         return (
             self.applied_styles == other.applied_styles and
