@@ -38,7 +38,19 @@ class Painter(object):
             styled_text = style.open + styled_text + style.close
         return styled_text
 
+    def __eq__(self, other):
+        return (
+            self.applied_styles == other.applied_styles and
+            self.styles == other.styles and
+            self.strip_color == other.strip_color and
+            self.supports_color == other.supports_color and
+            self.enabled == other.enabled
+        )
+
     def __repr__(self):
-        return '<Painter (%s)>' % self.applied_styles
+        return (
+            'Painter(applied_styles=%r, enabled=%r)' %
+            (self.applied_styles, self.enabled)
+        )
 
 paint = Painter()

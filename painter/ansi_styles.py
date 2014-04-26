@@ -45,8 +45,17 @@ class AnsiStyle(object):
     def close(self):
         return '\x1b[%im' % self.close_code
 
+    def __eq__(self, other):
+        return (
+            self.open_code == other.open_code and
+            self.close_code == other.close_code
+        )
+
     def __repr__(self):
-        return '%s<AnsiStyle>%s' % (self.open, self.close)
+        return (
+            'AnsiStyle(open_code=%i, close_code=%i)' %
+            (self.open_code, self.close_code)
+        )
 
 
 class AnsiStyler(object):
@@ -63,7 +72,12 @@ class AnsiStyler(object):
             raise AttributeError(
                 "'AnsiStyler' object has no attribute '%s'" % name
             )
-
         return self.styles[name]
+
+    def __eq__(self, other):
+        return self.styles == other.styles
+
+    def __repr__(self):
+        return 'AnsiStyler()'
 
 ansi = AnsiStyler()

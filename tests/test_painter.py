@@ -1,6 +1,7 @@
 from nose.tools import raises
 
 from painter.painter import paint
+from painter.painter import Painter  # noqa
 
 paint.enabled = True
 
@@ -53,11 +54,9 @@ def test_paint_raises_exception_on_invalid_color():
     paint.red.invalid_color('this should not be printed')
 
 
-def test_paint_return_repr():
-    assert (
-        repr(paint.red.on_blue.bold.underline) ==
-        "<Painter (['red', 'on_blue', 'bold', 'underline'])>"
-    )
+def test_paint_repr():
+    theme = paint.red.on_blue.bold.underline
+    assert eval(repr(theme)) == theme
 
 
 def test_paint_doesnt_output_escape_codes_if_the_input_is_empty():
