@@ -12,6 +12,11 @@ setup(
         'Your own expressive painter who colors text in your terminal.'
     ),
     packages=['painter'],
+    entry_points={
+        'console_scripts': [
+            'strip_ansi = painter.strip_ansi_cli:main'
+        ]
+    },
     zip_safe=False,
     setup_requires=[
         'nose',

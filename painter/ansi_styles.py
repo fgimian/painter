@@ -37,7 +37,7 @@ class AnsiStyle(object):
 
     @property
     def open(self):
-        return'\x1b[%im' % self.open_code
+        return '\x1b[%im' % self.open_code
 
     @property
     def close(self):
