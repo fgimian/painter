@@ -3,7 +3,7 @@ import sys
 
 import mock
 
-from painter.has_color import color_check
+from painter.supports_color import color_check
 
 
 class TestHasColor:

@@ -32,4 +32,4 @@ def color_check():
     return False
 
 
-has_color = color_check()
+supports_color = color_check()
