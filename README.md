@@ -91,9 +91,9 @@ more details.
 
 *You can click a version name to see a diff with the previous one.*
 
-* 0.3-dev ([TBA](https://github.com/fgimian/painter/compare/v0.2...master))
+* **[0.3-dev](https://github.com/fgimian/painter/compare/v0.2...master) (TBA)**
     * Implemented coloring support for Windows using the colorama library.
     * Updated the test command to be run from setup.py to avoid unnecessary
       download af test dependencies during installation.
-* 0.2 (2014-04-26)
+* **0.2 (2014-04-26)**
     * Initial release
