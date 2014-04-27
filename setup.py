@@ -122,7 +122,9 @@ setup(
     tests_require=[
         'nose',
         'coverage',
-        'mock',
+        'mock'
+    ],
+    setup_requires=[
         'flake8'
     ],
     cmdclass={'test': NoseTestCommand},
