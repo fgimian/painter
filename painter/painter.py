@@ -7,8 +7,8 @@ from .supports_color import supports_color
 class Painter(object):
 
     def __init__(self, styles, applied_styles=[], enabled=True):
-        self.applied_styles = applied_styles
         self.styles = styles
+        self.applied_styles = applied_styles
         self.enabled = enabled
 
     def __getattr__(self, name):
@@ -17,10 +17,9 @@ class Painter(object):
                 "'Painter' object has no attribute '%s'" % name
             )
 
-        sub_painter = Painter(
+        return Painter(
             self.styles, self.applied_styles + [name], enabled=self.enabled
         )
-        return sub_painter
 
     def __call__(self, *text, **params):
         sep = params.pop('sep', ' ')
@@ -31,7 +30,7 @@ class Painter(object):
         styled_text = combined_text
         for applied_style in self.applied_styles:
             style = getattr(self.styles, applied_style)
-            styled_text = style.apply(styled_text)
+            styled_text = style(styled_text)
         return styled_text
 
     def __dir__(self):
@@ -39,8 +38,8 @@ class Painter(object):
 
     def __eq__(self, other):
         return (
-            self.applied_styles == other.applied_styles and
             self.styles == other.styles and
+            self.applied_styles == other.applied_styles and
             self.enabled == other.enabled
         )
 

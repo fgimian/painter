@@ -248,6 +248,8 @@ more details.
       download af test dependencies during installation.
     * Renamed several of the utility functions for better consistency.  The
       paint API is unaffected by these changes.
+    * The has_color variable is renamed to supports_color and should now be
+      used as a function.
     * Several minor bug fixes.
 * ***0.2 (2014-04-26)***
     * Initial release
