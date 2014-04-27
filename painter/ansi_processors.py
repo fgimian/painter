@@ -2,14 +2,12 @@ def rainbow(text, styles):
     rainbow = [
         styles.red, styles.yellow, styles.green, styles.blue, styles.magenta
     ]
-
     rainbow_text = ''
-    for char in text:
-        # Apply the first color in the rainbow
-        rainbow_text += rainbow[0](char)
-        # Rotate the rainbow
-        rainbow = rainbow[1:] + rainbow[:1]
-
+    for index, char in enumerate(text):
+        if char in [' ', '\t', '\r', '\n']:
+            rainbow_text += char
+        else:
+            rainbow_text += rainbow[index % len(rainbow)](char)
     return rainbow_text
 
 
@@ -23,7 +21,7 @@ def zebra(text, styles):
     return zebra_text
 
 
-ANSI_PROCESSORS = {
+ANSI_FUNCTIONS = {
     'rainbow': rainbow,
     'zebra': zebra
 }
@@ -56,4 +54,4 @@ class AnsiProcessor(object):
     def __repr__(self):
         return 'AnsiProcessor(processors=%r)' % self.processors
 
-processors = AnsiProcessor(ANSI_PROCESSORS)
+processors = AnsiProcessor(ANSI_FUNCTIONS)
