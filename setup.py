@@ -2,6 +2,27 @@
 Painter
 -------
 
+.. image:: https://travis-ci.org/fgimian/painter.svg?branch=v0.2
+    :target: https://travis-ci.org/fgimian/painter
+    :alt: Build Status
+.. image:: https://coveralls.io/repos/fgimian/painter/badge.png?branch=master
+    :target: https://coveralls.io/r/fgimian/painter?branch=master
+    :alt: Coverage Status
+.. image:: https://pypip.in/license/painter/badge.png
+    :target: https://pypi.python.org/pypi/painter/
+    :alt: License
+.. image:: https://pypip.in/version/painter/badge.png
+    :target: https://pypi.python.org/pypi/painter/
+    :alt: Latest Version
+.. image:: https://pypip.in/download/painter/badge.png
+    :target: https://pypi.python.org/pypi/painter/
+    :alt: Downloads
+
+.. |logo| image:: https://raw.githubusercontent.com/fgimian/painter/master/images/painter_logo.png
+    :alt: Painter Logo
+
+|logo|
+
 Painter is an ANSI coloring library heavily based on the awesome
 `chalk <https://github.com/sindresorhus/chalk>`_ library for Node.js along
 with all its dependences.  However, painter attempts to provide an even more
