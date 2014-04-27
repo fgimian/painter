@@ -6,13 +6,13 @@ __license__ = 'MIT'
 __title__ = 'Painter'
 
 from .ansi_styles import styles  # noqa
-from .supports_color import supports_color  # noqa
 from .painter import paint  # noqa
 from .strip_color import strip_color  # noqa
+from .supports_color import supports_color  # noqa
 
 __all__ = [
     'styles',
-    'supports_color',
     'paint',
-    'strip_color'
+    'strip_color',
+    'supports_color'
 ]

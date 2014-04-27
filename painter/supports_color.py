@@ -2,7 +2,7 @@ import os
 import sys
 
 
-def color_check():
+def supports_color():
     if '--no-color' in sys.argv:
         return False
 
@@ -30,6 +30,3 @@ def color_check():
         return True
 
     return False
-
-
-supports_color = color_check()

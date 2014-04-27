@@ -55,4 +55,4 @@ if sys.platform == 'win32':  # pragma: nocover
     import colorama
     colorama.init()
 
-paint = Painter(ansi_styles, enabled=supports_color)
+paint = Painter(ansi_styles, enabled=supports_color())
