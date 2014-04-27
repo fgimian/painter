@@ -17,18 +17,13 @@ def main():
         print('strip-ansi <input file> > <output file>')
         print('or')
         print('cat <input file> | strip-ansi > <output file>')
-        exit()
-
-    if '-v' in sys.argv or '--version' in sys.argv:
+    elif '-v' in sys.argv or '--version' in sys.argv:
         print(__version__)
-        exit()
-
-    if input:
+    elif input:
         with codecs.open(input, 'r', 'utf-8') as f:
             sys.stdout.write(strip_color(f.read()))
-            exit()
-
-    sys.stdout.write(strip_color(sys.stdin.read()))
+    else:
+        sys.stdout.write(strip_color(sys.stdin.read()))
 
 if __name__ == '__main__':
     main()

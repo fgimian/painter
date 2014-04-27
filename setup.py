@@ -114,7 +114,7 @@ setup(
     packages=['painter'],
     entry_points={
         'console_scripts': [
-            'strip_color = painter.strip_color_cli:main'
+            'strip-color = painter.strip_color_cli:main'
         ]
     },
     zip_safe=False,
