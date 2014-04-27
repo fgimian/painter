@@ -170,11 +170,10 @@ Just like regular styles, themes can also be nested:
 theme_bg = paint.on_white
 theme_text_a = paint.red.bold
 theme_text_b = paint.blue.underline
+print(theme_bg(theme_text_a('Hello'), theme_text_b('world!')))
 ```
 
-print(theme_bg(theme_text_a('Hello'), theme_text_b('world!')))
-
-#### Color Support & Enabling or Disable Colors ####
+#### Color Support & Enabling or Disabling Colors ####
 
 By default, Painter will attempt to detect if your OS supports colors.  You
 may verify the detected color ability by reading the member variable
