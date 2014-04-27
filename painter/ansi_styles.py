@@ -43,6 +43,9 @@ class AnsiStyle(object):
     def close(self):
         return '\x1b[%im' % self.close_code
 
+    def apply(self, text):
+        return self.open + text + self.close
+
     def __eq__(self, other):
         return (
             self.open_code == other.open_code and
@@ -57,20 +60,19 @@ class AnsiStyle(object):
 
 
 class AnsiStyler(object):
-    def __init__(self):
-        self.styles = {}
-        for key, (open_code, close_code) in ANSI_CODES.items():
-            self.styles[key] = AnsiStyle(open_code, close_code)
-
-    def __contains__(self, key):
-        return key in self.styles
+    def __init__(self, styles):
+        self.styles = styles
 
     def __getattr__(self, name):
         if name not in self.styles:
             raise AttributeError(
                 "'AnsiStyler' object has no attribute '%s'" % name
             )
-        return self.styles[name]
+        open_code, close_code = ANSI_CODES[name]
+        return AnsiStyle(open_code, close_code)
+
+    def __contains__(self, key):
+        return key in self.styles
 
     def __dir__(self):
         return dir(type(self)) + list(self.__dict__) + list(self.styles)
@@ -83,6 +85,6 @@ class AnsiStyler(object):
             yield style
 
     def __repr__(self):
-        return 'AnsiStyler()'
+        return 'AnsiStyler(styles=%r)' % self.styles
 
-styles = AnsiStyler()
+styles = AnsiStyler(ANSI_CODES)
