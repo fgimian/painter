@@ -26,6 +26,10 @@ def check_item_in_ansi_dir(item):
     return item in dir(styles)
 
 
+def test_ansi_styler_returns_valid_color():
+    assert isinstance(styles.green, AnsiStyle)
+
+
 @raises(AttributeError)
 def test_ansi_styler_raises_exception_on_invalid_color():
     styles.invalid_color
