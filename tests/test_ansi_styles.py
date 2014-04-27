@@ -1,17 +1,17 @@
 from nose.tools import raises
 
-from painter.ansi_styles import ansi
+from painter.ansi_styles import styles
 from painter.ansi_styles import AnsiStyle, AnsiStyler  # noqa
 
 
 def test_ansi_style_return_escape_codes():
-    assert ansi.green.open == '\x1b[32m'
-    assert ansi.on_green.open == '\x1b[42m'
-    assert ansi.green.close == '\x1b[39m'
+    assert styles.green.open == '\x1b[32m'
+    assert styles.on_green.open == '\x1b[42m'
+    assert styles.green.close == '\x1b[39m'
 
 
 def test_ansi_style_repr():
-    assert eval(repr(ansi.green)) == ansi.green
+    assert eval(repr(styles.green)) == styles.green
 
 
 def test_ansi_styler_dir():
@@ -23,13 +23,13 @@ def test_ansi_styler_dir():
 
 
 def check_item_in_ansi_dir(item):
-    return item in dir(ansi)
+    return item in dir(styles)
 
 
 @raises(AttributeError)
 def test_ansi_styler_raises_exception_on_invalid_color():
-    ansi.invalid_color
+    styles.invalid_color
 
 
 def test_ansi_styler_repr():
-    assert eval(repr(ansi)) == ansi
+    assert eval(repr(styles)) == styles

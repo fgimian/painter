@@ -85,4 +85,4 @@ class AnsiStyler(object):
     def __repr__(self):
         return 'AnsiStyler()'
 
-ansi = AnsiStyler()
+styles = AnsiStyler()
