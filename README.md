@@ -246,6 +246,8 @@ more details.
     * Implemented coloring support for Windows using the colorama library.
     * Updated the test command to be run from setup.py to avoid unnecessary
       download af test dependencies during installation.
+    * Renamed several of the utility functions for better consistency.  The
+      paint API is unaffected by these changes.
     * Several minor bug fixes.
 * ***0.2 (2014-04-26)***
     * Initial release

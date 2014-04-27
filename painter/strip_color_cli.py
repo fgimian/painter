@@ -4,7 +4,7 @@ import sys
 import codecs
 
 from . import __version__
-from .strip_ansi import strip_ansi
+from .strip_color import strip_color
 
 
 def main():
@@ -25,10 +25,10 @@ def main():
 
     if input:
         with codecs.open(input, 'r', 'utf-8') as f:
-            sys.stdout.write(strip_ansi(f.read()))
+            sys.stdout.write(strip_color(f.read()))
             exit()
 
-    sys.stdout.write(strip_ansi(sys.stdin.read()))
+    sys.stdout.write(strip_color(sys.stdin.read()))
 
 if __name__ == '__main__':
     main()

@@ -1,7 +1,7 @@
 import sys
 
 from .ansi_styles import ansi
-from .strip_ansi import strip_ansi
+from .strip_color import strip_color
 from .has_color import has_color
 
 
@@ -10,7 +10,7 @@ class Painter(object):
     def __init__(self, applied_styles=[], enabled=None):
         self.applied_styles = applied_styles
         self.styles = ansi
-        self.strip_color = strip_ansi
+        self.strip_color = strip_color
         self.supports_color = has_color
         if enabled is None:
             self.enabled = self.supports_color

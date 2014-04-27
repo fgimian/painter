@@ -18,7 +18,7 @@ def color_check():
     if 'COLORTERM' in os.environ:
         return True
 
-    term = os.environ.get('TERM') or ''
+    term = os.environ.get('TERM', '')
 
     if term == 'dumb':
         return False
