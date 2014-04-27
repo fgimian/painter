@@ -13,8 +13,8 @@ script:
   # Validate code with flake8
   - python setup.py flake8
 
-  # Run all application tests
-  - python setup.py nosetests
+  # Run all unit tests
+  - python setup.py test
 
 after_success:
   # Send coverage statistics to Coveralls
