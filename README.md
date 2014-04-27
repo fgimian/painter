@@ -9,11 +9,16 @@
 
 ![Painter Logo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_logo.png)
 
-Awesome artwork provided courtesy of [Open Clip Art Library](http://openclipart.org/detail/174634/painter-penguin-by-moini-174634)
+Awesome artwork provided courtesy of
+[Open Clip Art Library](http://openclipart.org/detail/174634/painter-penguin-by-moini-174634)
 
-Painter is an ANSI coloring library heavily based on the awesome [chalk](https://github.com/sindresorhus/chalk) library for Node.js along with all its dependences.  However, painter attempts to provide an even more expressive API which reads like English.
+Painter is an ANSI coloring library heavily based on the awesome
+[chalk](https://github.com/sindresorhus/chalk) library for Node.js along with
+all its dependences.  However, painter attempts to provide an even more
+expressive API which reads like English.
 
-Painter is fully tested with 100% coverage and also completely Flake8 compilant too!
+Painter is fully tested with 100% coverage and also completely Flake8
+compilant too!
 
 ## Quick Start ##
 
@@ -65,3 +70,30 @@ The output of this script looks something like this:
 ![Painter Demo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_demo.png)
 
 Complete documentation is coming soon.
+
+## Running Tests ##
+
+You may run the unit tests as follows:
+
+``` bash
+git clone https://github.com/fgimian/painter.git
+cd painter
+python setup.py test
+```
+
+## License ##
+
+Painter is released under the MIT License. Please see the
+[LICENSE](https://github.com/fgimian/painter/blob/master/LICENSE) file for
+more details.
+
+## Changelog ##
+
+*You can click a version name to see a diff with the previous one.*
+
+* 0.3-dev ([TBA](https://github.com/fgimian/painter/compare/v0.2...master))
+    * Implemented coloring support for Windows using the colorama library.
+    * Updated the test command to be run from setup.py to avoid unnecessary
+      download af test dependencies during installation.
+* 0.2 (2014-04-26)
+    * Initial release
