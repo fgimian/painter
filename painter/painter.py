@@ -1,21 +1,15 @@
 import sys
 
-from .ansi_styles import styles
-from .strip_color import strip_color
+from .ansi_styles import styles as ansi_styles
 from .supports_color import supports_color
 
 
 class Painter(object):
 
-    def __init__(self, applied_styles=[], enabled=None):
+    def __init__(self, styles, applied_styles=[], enabled=True):
         self.applied_styles = applied_styles
         self.styles = styles
-        self.strip_color = strip_color
-        self.supports_color = supports_color
-        if enabled is None:
-            self.enabled = self.supports_color
-        else:
-            self.enabled = enabled
+        self.enabled = enabled
 
     def __getattr__(self, name):
         if name not in self.styles:
@@ -24,7 +18,7 @@ class Painter(object):
             )
 
         sub_painter = Painter(
-            self.applied_styles + [name], enabled=self.enabled
+            self.styles, self.applied_styles + [name], enabled=self.enabled
         )
         return sub_painter
 
@@ -47,15 +41,13 @@ class Painter(object):
         return (
             self.applied_styles == other.applied_styles and
             self.styles == other.styles and
-            self.strip_color == other.strip_color and
-            self.supports_color == other.supports_color and
             self.enabled == other.enabled
         )
 
     def __repr__(self):
         return (
-            'Painter(applied_styles=%r, enabled=%r)' %
-            (self.applied_styles, self.enabled)
+            'Painter(styles=%r, applied_styles=%r, enabled=%r)' %
+            (self.styles, self.applied_styles, self.enabled)
         )
 
 # Enable ANSI coloring on Windows using Colorama
@@ -63,4 +55,4 @@ if sys.platform == 'win32':  # pragma: nocover
     import colorama
     colorama.init()
 
-paint = Painter()
+paint = Painter(ansi_styles, enabled=supports_color)

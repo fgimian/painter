@@ -1,5 +1,6 @@
 import subprocess
 
+from painter.painter import paint
 from painter.strip_color import strip_color
 
 
@@ -25,3 +26,7 @@ def test_strip_color_cli():
         shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
     ).communicate()
     assert stdout == b'foofoo\n'
+
+
+def test_strip_color_strips_color_from_painter():
+    assert strip_color(paint.underline.red.on_green('foo')) == 'foo'

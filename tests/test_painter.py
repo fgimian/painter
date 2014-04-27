@@ -2,6 +2,7 @@ from nose.tools import raises
 
 from painter.painter import paint
 from painter.painter import Painter  # noqa
+from painter.ansi_styles import AnsiStyler  # noqa
 
 paint.enabled = True
 
@@ -61,7 +62,7 @@ def test_painter_repr():
 
 def test_painter_dir():
     for item in [
-        '__class__', '__getattr__', 'applied_styles', 'enabled', 'strip_color',
+        '__class__', '__getattr__', 'applied_styles', 'enabled',
         'black', 'inverse', 'italic', 'on_blue', 'on_cyan'
     ]:
         yield check_item_in_paint, item
@@ -83,7 +84,3 @@ def test_painter_enabled_does_not_output_colors_when_manually_disabled():
 
 def test_painter_styles_exposes_the_styles_as_ansi_escape_codes():
     assert paint.styles.red.open == '\x1b[31m'
-
-
-def test_painter_strip_color_strips_color_from_string():
-    assert paint.strip_color(paint.underline.red.on_green('foo')) == 'foo'
