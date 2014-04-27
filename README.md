@@ -104,6 +104,7 @@ The following are available:
     * on_cyan
     * on_white
 * ***Style Modifiers***
+    * reset
     * bold
     * italic (not widely supported)
     * underline
@@ -245,5 +246,6 @@ more details.
     * Implemented coloring support for Windows using the colorama library.
     * Updated the test command to be run from setup.py to avoid unnecessary
       download af test dependencies during installation.
+    * Several minor bug fixes.
 * ***0.2 (2014-04-26)***
     * Initial release

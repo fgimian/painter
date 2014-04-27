@@ -41,7 +41,7 @@ class Painter(object):
         return styled_text
 
     def __dir__(self):
-        return dir(type(self)) + list(self.__dict__) + list(paint.styles)
+        return dir(type(self)) + list(self.__dict__) + list(self.styles)
 
     def __eq__(self, other):
         return (
