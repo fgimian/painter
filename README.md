@@ -19,7 +19,7 @@ libraries for Node.js.  However, painter attempts to provide an even more
 expressive API which reads like English.
 
 Painter is fully tested with 100% coverage and also completely Flake8
-compilant too!
+compliant too!
 
 ## Quick Start ##
 
