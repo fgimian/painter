@@ -76,7 +76,7 @@ The output of this script looks something like this:
 
 ![Painter Demo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_demo.png)
 
-(Updated image forthcoming)
+(updated image forthcoming)
 
 ## Usage ##
 
@@ -306,7 +306,7 @@ more details.
 * ***[0.3-dev](https://github.com/fgimian/painter/compare/v0.2...master) (TBA)***
     * Implemented coloring support for Windows using the colorama library.
     * Updated the test command to be run from setup.py to avoid unnecessary
-      download af test dependencies during installation.
+      download of test dependencies during installation.
     * Renamed several of the utility functions for better consistency.  The
       paint API is unaffected by these changes.
     * The has_color variable is renamed to supports_color and should now be
