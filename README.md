@@ -298,6 +298,21 @@ colored_text = paint.red.on_blue('Text with some color')
 uncolored_text = strip_color(colored_text)
 ```
 
+In addition to the strip_color function, Painter installs a basic CLI tool
+named **strip-color** which can be used to strip color from text or a file.
+
+To strip text from stdin, simply pipe it into the script:
+
+``` bash
+ls -l --color | strip-color > ls-without-colors.txt
+```
+
+To strip text from a file, ensure the filename follows the strip-color command:
+
+``` bash
+strip-color file-with-colors.txt > file-without-colors.txt
+```
+
 ### Writing Custom Pattern Functions ###
 
 Adding new pattern functions is extremely easy with Painter.  First, define a
