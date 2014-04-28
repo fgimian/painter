@@ -23,9 +23,10 @@ Painter
 
 |logo|
 
-Painter is an ANSI coloring library heavily based on the awesome
-`chalk <https://github.com/sindresorhus/chalk>`_ library for Node.js along
-with all its dependences.  However, painter attempts to provide an even more
+Painter is an ANSI coloring library based on the excellent
+`chalk <https://github.com/sindresorhus/chalk>`_ and
+`colors.js <https://github.com/marak/colors.js/>`_
+libraries for Node.js.  However, painter attempts to provide an even more
 expressive API which reads like English.
 
 Painter is fully tested with 100% coverage and also completely Flake8
@@ -54,6 +55,11 @@ And now, go ahead and use it to output colors to your terminal:
 
     # Chaining colors and styles
     print(paint.blue.on_red.bold.underline('and far more complex combos too'))
+    print()
+
+    # Using color patterns
+    print(paint.rainbow('Awww look, a pretty rainbow :)'))
+    print(paint.zebra('and a scary looking zebra!'))
     print()
 
     # Nested painting

@@ -13,11 +13,10 @@ Awesome artwork provided courtesy of
 [Open Clip Art Library](http://openclipart.org/detail/174634/painter-penguin-by-moini-174634)
 
 Painter is an ANSI coloring library based on the excellent
-[chalk](https://github.com/sindresorhus/chalk) library for Node.js along with
-all its dependences.  However, painter attempts to provide an even more
-expressive API which reads like English.  Furthermore, I have taken some
-inspiration from the [colors.js](https://github.com/marak/colors.js/) library
-and its cool rainbow and zebra functions.
+[chalk](https://github.com/sindresorhus/chalk) and
+[colors.js](https://github.com/marak/colors.js/)
+libraries for Node.js.  However, painter attempts to provide an even more
+expressive API which reads like English.
 
 Painter is fully tested with 100% coverage and also completely Flake8
 compilant too!
@@ -41,13 +40,19 @@ from painter import paint
 print('Welcome to Painter!', paint.red('I can paint things red'),
       paint.blue('and blue'))
 
-# Chaining colors and styles
+      # Chaining colors and styles
 print(paint.blue.on_red.bold.underline('and far more complex combos too'))
+print()
+
+# Using color patterns
+print(paint.rainbow('Awww look, a pretty rainbow :)'))
+print(paint.zebra('and a scary looking zebra!'))
 print()
 
 # Nested painting
 print(paint.on_red('I can also use a background color across',
-                   paint.blue('multiple'), paint.yellow('foreground colors')))
+                   paint.blue('multiple'),
+                   paint.yellow('foreground colors')))
 
 # Custom separator
 print(paint('and', 'allow', 'you to use', paint.red('custom separators'),
@@ -71,6 +76,8 @@ The output of this script looks something like this:
 
 ![Painter Demo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_demo.png)
 
+(Updated image forthcoming)
+
 ## Usage ##
 
 ### The Painter ###
@@ -82,7 +89,8 @@ from painter import paint
 #### Generating Colored Text ####
 
 You may now use the paint instance for all your painting needs.  Simply chain
-a foreground color, a background color and any number of style modifiers.
+any combination of a foreground color, a background color, style modifiers
+and color patterns.
 
 The following are available:
 
@@ -113,6 +121,9 @@ The following are available:
     * blink
     * inverse
     * strikethrough (not widely supported)
+* ***Color Patterns***
+    * rainbow
+    * zebra
 
 After chaining the various properties of your style, you may call the returned
 object with text to obtain an ANSI wrapped version which is ready for printing.
@@ -120,7 +131,13 @@ object with text to obtain an ANSI wrapped version which is ready for printing.
 An example of red text on a white background in bold would be:
 
 ``` python
-print(paint.red.on_black.bold('Hello world!'))
+print(paint.red.on_white.bold('Hello world!'))
+```
+
+An example of a blue zebra effect would be:
+
+``` python
+print(paint.zebra.blue('Look, a blue zebra!'))
 ```
 
 Multiple arguments can be passed to the returned object which allow for nesting
@@ -143,7 +160,7 @@ print(paint.bold('Regular bold', paint.blue('blue'),
 
 Multiple arguments passed to the paint callable will be separated by a single
 white space.  However, you can customise this similarly to the way you do
-with the print function.
+with the print function using the **sep** keyword argument.
 
 ``` python
 print('Hello', paint.cyan('there'), paint.green('buddy'), sep='_')
@@ -179,18 +196,20 @@ print(theme_bg(theme_text_a('Hello'), theme_text_b('world!')))
 #### Color Support & Enabling or Disabling Colors ####
 
 By default, Painter will attempt to detect if your OS supports colors.  You
-may verify the detected color ability by reading the member variable
-**supports_color**.
+may verify the detected color ability by importing the **supports_color**
+function.
 
 ``` python
-if paint.supports_color:
+from painter import supports_color
+
+if supports_color():
     print('Painter detected that your OS supports colors')
 else:
     print('Painter detected that your OS does not support colors')
 ```
 
-Painter will automatically detect enable or disable colors respectively if
-the following CLI argument is present; **--color** or **--no-color**.
+Painter will automatically enable or disable colors respectively if
+**--color** or **--no-color** are included in the CLI arguments (sys.argv).
 
 However, if you would like to explicitly enable or disable coloring, simply
 update the boolean member variable **enabled**.
@@ -214,14 +233,25 @@ e.g.
 print(paint.styles.red.open + 'Some red text' + paint.styles.red.close)
 ```
 
-#### Stripping Color from Strings ####
-
-You may also easily strip color from a string using the **strip_color**
-function:
+Furthermore, you can import the styles instance and use directly without
+going through the paint instance:
 
 ``` python
+from painter import styles
+
+print(styles.red.open + 'Some red text' + styles.red.close)
+```
+
+#### Stripping Color from Strings ####
+
+You may also easily strip color from a string by importing and using the
+**strip_color** function:
+
+``` python
+from painter import paint, strip_color
+
 colored_text = paint.red.on_blue('Text with some color')
-uncolored_text = paint.strip_color(colored_text)
+uncolored_text = strip_color(colored_text)
 ```
 
 ## Running Tests ##
@@ -232,6 +262,12 @@ You may run the unit tests as follows:
 git clone https://github.com/fgimian/painter.git
 cd painter
 python setup.py test
+```
+
+You may validate Flake8 compatibility as follows:
+
+``` bash
+python setup.py flake8
 ```
 
 ## License ##
@@ -252,6 +288,8 @@ more details.
       paint API is unaffected by these changes.
     * The has_color variable is renamed to supports_color and should now be
       used as a function.
-    * Several minor bug fixes.
+    * Implemented color patterns which generate varying color patterns on
+      strings.  The rainbow and zebra patterns come included.
+    * Several bug fixes.
 * ***0.2 (2014-04-26)***
     * Initial release
