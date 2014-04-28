@@ -19,11 +19,19 @@ def main():
         print('cat <input file> | strip-color > <output file>')
     elif '-v' in sys.argv or '--version' in sys.argv:
         print(__version__)
-    elif input:
-        with codecs.open(input, 'r', 'utf-8') as f:
-            sys.stdout.write(strip_color(f.read()))
     else:
-        sys.stdout.write(strip_color(sys.stdin.read()))
+        try:
+            if input:
+                try:
+                    with codecs.open(input, 'r', 'utf-8') as f:
+                        sys.stdout.write(strip_color(f.read()))
+                except (OSError, IOError) as e:
+                    print('%s' % e, file=sys.stderr)
+                    exit(e.errno)
+            else:
+                sys.stdout.write(strip_color(sys.stdin.read()))
+        except KeyboardInterrupt:  # pragma: nocover
+            exit(1)
 
 if __name__ == '__main__':
     main()

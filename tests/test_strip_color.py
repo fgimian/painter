@@ -70,7 +70,7 @@ def test_strip_color_cli_stdin():
     assert stdout == b'foofoo\n'
 
 
-def test_strip_color_cli_file():
+def test_strip_color_cli_valid_file():
     fixtures_dir = os.path.abspath(
         os.path.join(os.path.dirname(__file__), 'fixtures')
     )
@@ -85,3 +85,19 @@ def test_strip_color_cli_file():
         text = f.read()
 
     assert stdout == b(text)
+
+
+def test_strip_color_cli_invalid_file():
+    fixtures_dir = os.path.abspath(
+        os.path.join(os.path.dirname(__file__), 'fixtures')
+    )
+
+    input_file = os.path.join(fixtures_dir, 'booboo.txt')
+    stdout, stderr = subprocess.Popen(
+        'python -m painter.strip_color_cli %s' % input_file,
+        shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    ).communicate()
+
+    assert b(
+        '[Errno 2] No such file or directory: %r\n' % input_file
+    ) in stderr

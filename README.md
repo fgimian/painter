@@ -384,6 +384,8 @@ more details.
 
 *You can click a version name to see a diff with the previous one.*
 
+* ***[0.3.1](https://github.com/fgimian/painter/compare/v0.3...master) (TBA)***
+    * Made strip-color CLI script more robust when errors occur
 * ***[0.3](https://github.com/fgimian/painter/compare/v0.2...v0.3) (2014-04-28)***
     * Implemented coloring support for Windows using the colorama library.
     * Updated the test command to be run from setup.py to avoid unnecessary
