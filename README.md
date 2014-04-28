@@ -76,8 +76,6 @@ The output of this script looks something like this:
 
 ![Painter Demo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_demo.png)
 
-(updated image forthcoming)
-
 ## Usage ##
 
 ### The Painter ###
