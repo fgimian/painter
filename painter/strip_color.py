@@ -3,7 +3,7 @@ import re
 
 
 if sys.version_info[0] == 2:  # pragma: nocover
-    string_type = basestring
+    string_type = basestring  # noqa
 else:  # pragma: nocover
     string_type = str
 
