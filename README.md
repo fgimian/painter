@@ -40,7 +40,7 @@ from painter import paint
 print('Welcome to Painter!', paint.red('I can paint things red'),
       paint.blue('and blue'))
 
-      # Chaining colors and styles
+# Chaining colors and styles
 print(paint.blue.on_red.bold.underline('and far more complex combos too'))
 print()
 
