@@ -1,8 +1,15 @@
+import sys
 import re
 
 
+if sys.version_info[0] == 2:  # pragma: nocover
+    string_type = basestring
+else:  # pragma: nocover
+    string_type = str
+
+
 def strip_color(s):
-    if isinstance(s, str):
+    if isinstance(s, string_type):
         return re.compile(r"""
             \x1b            # escape character
             \[              # the CSI code for color
