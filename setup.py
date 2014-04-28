@@ -2,7 +2,7 @@
 Painter
 -------
 
-.. image:: https://travis-ci.org/fgimian/painter.svg?branch=v0.2
+.. image:: https://travis-ci.org/fgimian/painter.png?branch=v0.2
     :target: https://travis-ci.org/fgimian/painter
     :alt: Build Status
 .. image:: https://coveralls.io/repos/fgimian/painter/badge.png?branch=master
