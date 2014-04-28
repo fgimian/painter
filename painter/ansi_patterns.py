@@ -1,3 +1,6 @@
+from .ansi_styles import styles as ansi_styles
+
+
 def rainbow(text, styles):
     rainbow = [
         styles.red, styles.yellow, styles.green, styles.blue, styles.magenta
@@ -27,9 +30,25 @@ ANSI_FUNCTIONS = {
 }
 
 
+class AnsiPattern(object):
+    def __init__(self, function, styles):
+        self.function = function
+        self.styles = styles
+
+    def __call__(self, text):
+        return self.function(text, self.styles)
+
+    def __repr__(self):
+        return (
+            '<%s function=%r>' %
+            (self.__class__.__name__, self.function.__name__)
+        )
+
+
 class AnsiPatterner(object):
-    def __init__(self, patterns):
+    def __init__(self, patterns, styles):
         self.patterns = patterns
+        self.styles = styles
 
     def __getattr__(self, name):
         if name not in self.patterns:
@@ -37,7 +56,7 @@ class AnsiPatterner(object):
                 "%r object has no attribute %r" %
                 (self.__class__.__name__, name)
             )
-        return self.patterns[name]
+        return AnsiPattern(self.patterns[name], self.styles)
 
     def __dir__(self):
         return dir(type(self)) + list(self.__dict__) + list(self.patterns)
@@ -52,4 +71,4 @@ class AnsiPatterner(object):
             (self.__class__.__name__, sorted(list(self.patterns)))
         )
 
-patterns = AnsiPatterner(ANSI_FUNCTIONS)
+patterns = AnsiPatterner(ANSI_FUNCTIONS, ansi_styles)

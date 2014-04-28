@@ -262,7 +262,7 @@ going through the paint instance:
 ``` python
 from painter import patterns, styles
 
-print(patterns.rainbow('Some red text', styles))
+print(patterns.rainbow('Some red text'))
 ```
 
 #### Stripping Color from Strings ####

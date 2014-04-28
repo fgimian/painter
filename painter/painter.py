@@ -38,7 +38,7 @@ class Painter(object):
                 styled_text = style(styled_text)
             else:
                 pattern = getattr(self.patterns, applied_style)
-                styled_text = pattern(styled_text, self.styles)
+                styled_text = pattern(styled_text)
         return styled_text
 
     def __dir__(self):
