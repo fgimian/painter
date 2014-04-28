@@ -27,28 +27,29 @@ ANSI_FUNCTIONS = {
 }
 
 
-class AnsiProcessor(object):
-    def __init__(self, processors):
-        self.processors = processors
+class AnsiPatterner(object):
+    def __init__(self, patterns):
+        self.patterns = patterns
 
     def __getattr__(self, name):
-        if name not in self.processors:
+        if name not in self.patterns:
             raise AttributeError(
-                "'AnsiProcessor' object has no attribute '%s'" % name
+                "%r object has no attribute %r" %
+                (self.__class__.__name__, name)
             )
-        return self.processors[name]
+        return self.patterns[name]
 
     def __dir__(self):
-        return dir(type(self)) + list(self.__dict__) + list(self.processors)
+        return dir(type(self)) + list(self.__dict__) + list(self.patterns)
 
     def __iter__(self):
-        for processor in self.processors:
-            yield processor
+        for pattern in self.patterns:
+            yield pattern
 
     def __repr__(self):
         return (
-            '<%s processors=%r>' %
-            (self.__class__.__name__, sorted(list(self.processors)))
+            '<%s patterns=%r>' %
+            (self.__class__.__name__, sorted(list(self.patterns)))
         )
 
-processors = AnsiProcessor(ANSI_FUNCTIONS)
+patterns = AnsiPatterner(ANSI_FUNCTIONS)

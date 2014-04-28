@@ -3,8 +3,7 @@ from types import FunctionType as function
 from nose.tools import raises
 
 from painter.ansi_styles import styles
-from painter.ansi_processors import rainbow, zebra, processors
-from painter.ansi_processors import AnsiProcessor  # noqa
+from painter.ansi_patterns import rainbow, zebra, patterns
 
 
 def test_rainbow():
@@ -25,27 +24,27 @@ def test_zebra():
     )
 
 
-def test_ansi_processor_dir():
+def test_ansi_pattern_dir():
     for item in [
-        '__class__', '__getattr__',  'processors', 'rainbow', 'zebra'
+        '__class__', '__getattr__',  'patterns', 'rainbow', 'zebra'
     ]:
         yield check_item_in_ansi_dir, item
 
 
 def check_item_in_ansi_dir(item):
-    return item in dir(processors)
+    return item in dir(patterns)
 
 
-def test_ansi_styler_returns_valid_processor():
-    assert isinstance(processors.rainbow, function)
+def test_ansi_styler_returns_valid_patterner():
+    assert isinstance(patterns.rainbow, function)
 
 
 @raises(AttributeError)
-def test_ansi_processor_raises_exception_on_invalid_processor():
-    processors.invalid_processor
+def test_ansi_pattern_raises_exception_on_invalid_patterner():
+    patterns.invalid_pattern
 
 
-def test_ansi_processor_repr():
-    assert repr(processors) == (
-        '<AnsiProcessor processors=%r>' % sorted(list(processors))
+def test_ansi_pattern_repr():
+    assert repr(patterns) == (
+        '<AnsiPatterner patterns=%r>' % sorted(list(patterns))
     )

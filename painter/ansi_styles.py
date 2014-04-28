@@ -60,7 +60,8 @@ class AnsiStyler(object):
     def __getattr__(self, name):
         if name not in self.styles:
             raise AttributeError(
-                "'AnsiStyler' object has no attribute '%s'" % name
+                "%r object has no attribute %r" %
+                (self.__class__.__name__, name)
             )
         open_code, close_code = self.styles[name]
         return AnsiStyle(open_code, close_code)

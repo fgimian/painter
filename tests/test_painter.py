@@ -1,8 +1,6 @@
 from nose.tools import raises
 
 from painter.painter import paint
-from painter.painter import Painter  # noqa
-from painter.ansi_styles import AnsiStyler  # noqa
 
 paint.enabled = True
 
@@ -13,7 +11,7 @@ def test_painter_style_string():
     assert paint.on_red('foo') == '\x1b[41mfoo\x1b[49m'
 
 
-def test_painter_process_string():
+def test_painter_pattern_string():
     assert paint.rainbow('fooooo o') == (
         '\x1b[31mf\x1b[39m' + '\x1b[33mo\x1b[39m' + '\x1b[32mo\x1b[39m' +
         '\x1b[34mo\x1b[39m' + '\x1b[35mo\x1b[39m' + '\x1b[31mo\x1b[39m' + ' ' +
@@ -31,7 +29,7 @@ def test_painter_support_applying_multiple_styles_at_once():
     )
 
 
-def test_painter_support_applying_processor_and_style_at_once():
+def test_painter_support_applying_pattern_and_style_at_once():
     assert paint.zebra.red('foo') == (
         '\x1b[31mf\x1b[7m' + 'o' + '\x1b[27mo\x1b[39m'
     )

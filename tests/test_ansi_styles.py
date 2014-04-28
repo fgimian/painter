@@ -1,7 +1,7 @@
 from nose.tools import raises
 
 from painter.ansi_styles import styles
-from painter.ansi_styles import AnsiStyle, AnsiStyler  # noqa
+from painter.ansi_styles import AnsiStyle
 
 
 def test_ansi_style_return_escape_codes():

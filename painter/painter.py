@@ -1,26 +1,27 @@
 import sys
 
 from .ansi_styles import styles as ansi_styles
-from .ansi_processors import processors as ansi_processors
+from .ansi_patterns import patterns as ansi_patterns
 from .supports_color import supports_color
 
 
 class Painter(object):
 
-    def __init__(self, styles, processors, applied_styles=[], enabled=True):
+    def __init__(self, styles, patterns, applied_styles=[], enabled=True):
         self.styles = styles
-        self.processors = processors
+        self.patterns = patterns
         self.applied_styles = applied_styles
         self.enabled = enabled
 
     def __getattr__(self, name):
-        if name not in self.styles and name not in self.processors:
+        if name not in self.styles and name not in self.patterns:
             raise AttributeError(
-                "'Painter' object has no attribute '%s'" % name
+                "%r object has no attribute %r" %
+                (self.__class__.__name__, name)
             )
 
         return Painter(
-            self.styles, self.processors, self.applied_styles + [name],
+            self.styles, self.patterns, self.applied_styles + [name],
             enabled=self.enabled
         )
 
@@ -36,14 +37,14 @@ class Painter(object):
                 style = getattr(self.styles, applied_style)
                 styled_text = style(styled_text)
             else:
-                processor = getattr(self.processors, applied_style)
-                styled_text = processor(styled_text, self.styles)
+                pattern = getattr(self.patterns, applied_style)
+                styled_text = pattern(styled_text, self.styles)
         return styled_text
 
     def __dir__(self):
         return (
             dir(type(self)) + list(self.__dict__) + list(self.styles) +
-            list(self.processors)
+            list(self.patterns)
         )
 
     def __repr__(self):
@@ -57,4 +58,4 @@ if sys.platform == 'win32':  # pragma: nocover
     import colorama
     colorama.init()
 
-paint = Painter(ansi_styles, ansi_processors, enabled=supports_color())
+paint = Painter(ansi_styles, ansi_patterns, enabled=supports_color())
