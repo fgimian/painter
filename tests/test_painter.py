@@ -13,27 +13,38 @@ def test_painter_style_string():
     assert paint.on_red('foo') == '\x1b[41mfoo\x1b[49m'
 
 
+def test_painter_process_string():
+    assert paint.rainbow('fooooo o') == (
+        '\x1b[31mf\x1b[39m' + '\x1b[33mo\x1b[39m' + '\x1b[32mo\x1b[39m' +
+        '\x1b[34mo\x1b[39m' + '\x1b[35mo\x1b[39m' + '\x1b[31mo\x1b[39m' + ' ' +
+        '\x1b[32mo\x1b[39m'
+    )
+    assert paint.zebra('foo') == 'f' + '\x1b[7mo\x1b[27m' + 'o'
+
+
 def test_painter_support_applying_multiple_styles_at_once():
-    assert (
-        paint.red.on_green.underline('foo') ==
+    assert paint.red.on_green.underline('foo') == (
         '\x1b[4m\x1b[42m\x1b[31mfoo\x1b[39m\x1b[49m\x1b[24m'
     )
-    assert (
-        paint.underline.red.on_green('foo') ==
+    assert paint.underline.red.on_green('foo') == (
         '\x1b[42m\x1b[31m\x1b[4mfoo\x1b[24m\x1b[39m\x1b[49m'
     )
 
 
+def test_painter_support_applying_processor_and_style_at_once():
+    assert paint.zebra.red('foo') == (
+        '\x1b[31mf\x1b[7m' + 'o' + '\x1b[27mo\x1b[39m'
+    )
+
+
 def test_painter_support_nesting_styles():
-    assert (
-        paint.red('foo' + paint.underline.on_blue('bar') + '!') ==
+    assert paint.red('foo' + paint.underline.on_blue('bar') + '!') == (
         '\x1b[31mfoo\x1b[44m\x1b[4mbar\x1b[24m\x1b[49m!\x1b[39m'
     )
 
 
 def test_painter_reset_all_styles_with_reset():
-    assert (
-        paint.reset(paint.red.on_green.underline('foo') + 'foo') ==
+    assert paint.reset(paint.red.on_green.underline('foo') + 'foo') == (
         '\x1b[0m\x1b[4m\x1b[42m\x1b[31mfoo\x1b[39m\x1b[49m\x1b[24mfoo\x1b[0m'
     )
 

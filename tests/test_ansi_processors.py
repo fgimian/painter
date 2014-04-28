@@ -9,20 +9,19 @@ from painter.ansi_processors import AnsiProcessor  # noqa
 
 def test_rainbow():
     assert rainbow('I like rainbows', styles) == (
-        styles.red('I') + ' ' + styles.green('l') + styles.blue('i') +
-        styles.magenta('k') + styles.red('e') + ' ' + styles.green('r') +
-        styles.blue('a') + styles.magenta('i') + styles.red('n') +
-        styles.yellow('b') + styles.green('o') + styles.blue('w') +
-        styles.magenta('s')
+        '\x1b[31mI\x1b[39m' + ' ' + '\x1b[32ml\x1b[39m' + '\x1b[34mi\x1b[39m' +
+        '\x1b[35mk\x1b[39m' + '\x1b[31me\x1b[39m' + ' ' + '\x1b[32mr\x1b[39m' +
+        '\x1b[34ma\x1b[39m' + '\x1b[35mi\x1b[39m' + '\x1b[31mn\x1b[39m' +
+        '\x1b[33mb\x1b[39m' + '\x1b[32mo\x1b[39m' + '\x1b[34mw\x1b[39m' +
+        '\x1b[35ms\x1b[39m'
     )
 
 
 def test_zebra():
     assert zebra('Zebras are cool', styles) == (
-        'Z' + styles.inverse('e') + 'b' + styles.inverse('r') + 'a' +
-        styles.inverse('s') + ' ' + styles.inverse('a') + 'r' +
-        styles.inverse('e') + ' ' + styles.inverse('c') + 'o' +
-        styles.inverse('o') + 'l'
+        'Z' + '\x1b[7me\x1b[27m' + 'b' + '\x1b[7mr\x1b[27ma' +
+        '\x1b[7ms\x1b[27m' + ' ' + '\x1b[7ma\x1b[27mr' + '\x1b[7me\x1b[27m' +
+        ' ' + '\x1b[7mc\x1b[27m' + 'o' + '\x1b[7mo\x1b[27m' + 'l'
     )
 
 
