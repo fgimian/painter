@@ -46,16 +46,10 @@ class AnsiStyle(object):
     def __call__(self, text):
         return self.open + text + self.close
 
-    def __eq__(self, other):
-        return (
-            self.open_code == other.open_code and
-            self.close_code == other.close_code
-        )
-
     def __repr__(self):
         return (
-            'AnsiStyle(open_code=%i, close_code=%i)' %
-            (self.open_code, self.close_code)
+            '<%s open_code=%r, close_code=%r>' %
+            (self.__class__.__name__, self.open_code, self.close_code)
         )
 
 
@@ -77,14 +71,14 @@ class AnsiStyler(object):
     def __dir__(self):
         return dir(type(self)) + list(self.__dict__) + list(self.styles)
 
-    def __eq__(self, other):
-        return self.styles == other.styles
-
     def __iter__(self):
         for style in self.styles:
             yield style
 
     def __repr__(self):
-        return 'AnsiStyler(styles=%r)' % self.styles
+        return (
+            '<%s styles=%r>' %
+            (self.__class__.__name__, sorted(list(self.styles)))
+        )
 
 styles = AnsiStyler(ANSI_CODES)

@@ -47,4 +47,6 @@ def test_ansi_processor_raises_exception_on_invalid_processor():
 
 
 def test_ansi_processor_repr():
-    assert eval(repr(processors)) == processors
+    assert repr(processors) == (
+        '<AnsiProcessor processors=%r>' % sorted(list(processors))
+    )

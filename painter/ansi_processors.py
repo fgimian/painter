@@ -44,14 +44,14 @@ class AnsiProcessor(object):
     def __dir__(self):
         return dir(type(self)) + list(self.__dict__) + list(self.processors)
 
-    def __eq__(self, other):
-        return self.processors == other.processors
-
     def __iter__(self):
         for processor in self.processors:
             yield processor
 
     def __repr__(self):
-        return 'AnsiProcessor(processors=%r)' % self.processors
+        return (
+            '<%s processors=%r>' %
+            (self.__class__.__name__, sorted(list(self.processors)))
+        )
 
 processors = AnsiProcessor(ANSI_FUNCTIONS)

@@ -56,8 +56,9 @@ def test_painter_raises_exception_on_invalid_color():
 
 
 def test_painter_repr():
-    theme = paint.red.on_blue.bold.underline
-    assert eval(repr(theme)) == theme
+    assert repr(paint.red.on_blue.bold.underline) == (
+        "<Painter applied_styles=['red', 'on_blue', 'bold', 'underline']>"
+    )
 
 
 def test_painter_dir():

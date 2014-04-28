@@ -11,7 +11,7 @@ def test_ansi_style_return_escape_codes():
 
 
 def test_ansi_style_repr():
-    assert eval(repr(styles.green)) == styles.green
+    assert repr(styles.green) == '<AnsiStyle open_code=32, close_code=39>'
 
 
 def test_ansi_styler_dir():
@@ -36,4 +36,4 @@ def test_ansi_styler_raises_exception_on_invalid_color():
 
 
 def test_ansi_styler_repr():
-    assert eval(repr(styles)) == styles
+    assert repr(styles) == '<AnsiStyler styles=%r>' % sorted(list(styles))

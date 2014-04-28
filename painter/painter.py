@@ -46,19 +46,10 @@ class Painter(object):
             list(self.processors)
         )
 
-    def __eq__(self, other):
-        return (
-            self.styles == other.styles and
-            self.processors == other.processors and
-            self.applied_styles == other.applied_styles and
-            self.enabled == other.enabled
-        )
-
     def __repr__(self):
         return (
-            'Painter(styles=%r, processors=%r, applied_styles=%r, '
-            'enabled=%r)' %
-            (self.styles, self.processors, self.applied_styles, self.enabled)
+            '<%s applied_styles=%r>' %
+            (self.__class__.__name__, self.applied_styles)
         )
 
 # Enable ANSI coloring on Windows using Colorama
