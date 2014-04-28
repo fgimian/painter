@@ -120,7 +120,7 @@ if sys.platform == 'win32':
 
 setup(
     name='painter',
-    version='0.3.1',
+    version='0.3.2-dev',
     url='https://github.com/fgimian/painter',
     license='MIT',
     author='Fotis Gimian',
