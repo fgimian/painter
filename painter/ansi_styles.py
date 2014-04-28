@@ -65,9 +65,6 @@ class AnsiStyler(object):
         open_code, close_code = self.styles[name]
         return AnsiStyle(open_code, close_code)
 
-    def __contains__(self, key):
-        return key in self.styles
-
     def __dir__(self):
         return dir(type(self)) + list(self.__dict__) + list(self.styles)
 

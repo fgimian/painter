@@ -38,9 +38,6 @@ class AnsiProcessor(object):
             )
         return self.processors[name]
 
-    def __contains__(self, key):
-        return key in self.processors
-
     def __dir__(self):
         return dir(type(self)) + list(self.__dict__) + list(self.processors)
 
