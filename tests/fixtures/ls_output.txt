@@ -1,0 +1,8 @@
+LICENSE
+README.md
+images
+painter
+setup.cfg
+setup.py
+test.py
+tests
