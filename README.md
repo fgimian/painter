@@ -95,32 +95,55 @@ and color patterns.
 The following are available:
 
 * ***Foreground colors***
-    * black
-    * red
-    * green
-    * yellow
-    * blue
-    * magenta
-    * cyan
-    * white
-    * gray (or grey)
+    * Standard colors most commonly supported
+        * black
+        * red
+        * green
+        * yellow
+        * blue
+        * magenta
+        * cyan
+        * white
+    * Extended colors for systems supporting up to 16 colors
+        * light_black (or gray / grey)
+        * light_red
+        * light_green
+        * light_yellow
+        * light_blue
+        * light_magenta
+        * light_cyan
+        * light_white
 * ***Background colors***
-    * on_black
-    * on_red
-    * on_green
-    * on_yellow
-    * on_blue
-    * on_magenta
-    * on_cyan
-    * on_white
+    * Standard colors most commonly supported
+        * on_black
+        * on_red
+        * on_green
+        * on_yellow
+        * on_blue
+        * on_magenta
+        * on_cyan
+        * on_white
+    * Extended colors for systems supporting up to 16 colors
+        * on_light_black (or on_gray / on_grey)
+        * on_light_red
+        * on_light_green
+        * on_light_yellow
+        * on_light_blue
+        * on_light_magenta
+        * on_light_cyan
+        * on_light_white
 * ***Style Modifiers***
-    * reset
-    * bold
-    * italic (not widely supported)
-    * underline
-    * blink
-    * inverse
-    * strikethrough (not widely supported)
+    * Styles most commonly supported
+        * reset
+        * bold
+        * underline
+        * blinking
+        * inverse
+    * Not widely supported
+        * faint
+        * italic
+        * invisible
+        * strikethrough
 * ***Color Patterns***
     * rainbow
     * zebra
