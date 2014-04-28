@@ -36,7 +36,32 @@ def check_item_in_ansi_dir(item):
     return item in dir(patterns)
 
 
-def test_ansi_pattern_returns_valid_patterner():
+def test_ansi_patterner_registration_of_custom_pattern():
+    def underline_vowels(text, styles):
+        vowel_text = ''
+        for char in text:
+            if char.lower() in ['a', 'e', 'i', 'o', 'u']:
+                vowel_text += styles.underline(char)
+            else:
+                vowel_text += char
+        return vowel_text
+    patterns.register('voweler', underline_vowels)
+    assert 'voweler' in patterns
+    voweler_text = patterns.voweler('Hi there')
+    patterns.deregister('voweler')
+    assert 'voweler' not in patterns
+    assert voweler_text == (
+        'H' + '\x1b[4mi\x1b[24m' + ' th' + '\x1b[4me\x1b[24m' + 'r' +
+        '\x1b[4me\x1b[24m'
+    )
+
+
+@raises(KeyError)
+def test_ansi_patterner_invalid_deregistration():
+    patterns.deregister('foo')
+
+
+def test_ansi_patterner_returns_valid_pattern():
     assert isinstance(patterns.rainbow, AnsiPattern)
 
 

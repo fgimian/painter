@@ -50,6 +50,12 @@ class AnsiPatterner(object):
         self.patterns = patterns
         self.styles = styles
 
+    def register(self, name, function):
+        self.patterns[name] = function
+
+    def deregister(self, name):
+        del self.patterns[name]
+
     def __getattr__(self, name):
         if name not in self.patterns:
             raise AttributeError(

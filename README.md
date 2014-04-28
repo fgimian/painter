@@ -144,7 +144,7 @@ The following are available:
         * italic
         * invisible
         * strikethrough
-* ***Color Patterns***
+* ***Color Patterns (expandable)***
     * rainbow
     * zebra
 
@@ -283,7 +283,7 @@ However, you can import the patterns instance and use directly without
 going through the paint instance:
 
 ``` python
-from painter import patterns, styles
+from painter import patterns
 
 print(patterns.rainbow('Some red text'))
 ```
@@ -298,6 +298,51 @@ from painter import paint, strip_color
 
 colored_text = paint.red.on_blue('Text with some color')
 uncolored_text = strip_color(colored_text)
+```
+
+### Writing Custom Pattern Functions ###
+
+Adding new pattern functions is extremely easy with Painter.  First, define a
+function which takes in two parameters, the text and a styles object.  The
+function must return the processed text.
+
+e.g. let's create a pattern which underlines every vowel
+
+``` python
+def underline_vowels(text, styles):
+    vowel_text = ''
+    for char in text:
+        if char.lower() in ['a', 'e', 'i', 'o', 'u']:
+            vowel_text += styles.underline(char)
+        else:
+            vowel_text += char
+    return vowel_text
+```
+
+To register this, simply run the **register** member function of the
+**patterns** member variable.  This function takes two arguments, the **name**
+of your pattern and your **function**.
+
+``` python
+paint.patterns.register('voweler', underline_vowels)
+```
+
+Now go ahead and use it immediately:
+
+``` python
+print(paint.voweler('I like puppies!'))
+```
+
+You may de-register a custom pattern at any time using the deregister function:
+
+``` python
+paint.patterns.deregister('voweler')
+```
+
+If you have imported patterns directly, then registration is identical:
+
+``` python
+patterns.register('voweler', underline_vowels)
 ```
 
 ## Running Tests ##
@@ -336,6 +381,8 @@ more details.
       used as a function.
     * Implemented color patterns which generate varying color patterns on
       strings.  The rainbow and zebra patterns come included.
+    * Custom pattern functions may now be written and easily registered with
+      Painter.
     * Several bug fixes.
 * ***0.2 (2014-04-26)***
     * Initial release
