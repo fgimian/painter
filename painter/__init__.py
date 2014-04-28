@@ -1,4 +1,4 @@
-__version__ = '0.3-dev'
+__version__ = '0.3'
 __author__ = 'Fotis Gimian'
 __email__ = 'fgimiansoftware@gmail.com'
 __url__ = 'https://github.com/fgimian/painter'

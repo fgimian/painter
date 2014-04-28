@@ -301,8 +301,8 @@ uncolored_text = strip_color(colored_text)
 ### Writing Custom Pattern Functions ###
 
 Adding new pattern functions is extremely easy with Painter.  First, define a
-function which takes in two parameters, the text and a styles object.  The
-function must return the processed text.
+function which takes in two parameters, the **text** and a **styles** object.
+The function must return the processed text.
 
 e.g. let's create a pattern which underlines every vowel
 
@@ -369,7 +369,7 @@ more details.
 
 *You can click a version name to see a diff with the previous one.*
 
-* ***[0.3-dev](https://github.com/fgimian/painter/compare/v0.2...master) (TBA)***
+* ***[0.3](https://github.com/fgimian/painter/compare/v0.2...v0.3) (2014-04-28)***
     * Implemented coloring support for Windows using the colorama library.
     * Updated the test command to be run from setup.py to avoid unnecessary
       download of test dependencies during installation.

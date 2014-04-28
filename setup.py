@@ -83,6 +83,18 @@ And now, go ahead and use it to output colors to your terminal:
 
     paint.enabled = True
     print('Hope you have a', paint.blue('lovely day!'), paint.green(':)'))
+
+The output of this script looks something like this:
+
+.. image:: https://raw.githubusercontent.com/fgimian/painter/master/images/painter_demo.png
+    :alt: Painter Demo
+
+Documentation
+`````````````
+
+For full details on using Painter, please check out the
+`Painter GitHub Page <https://github.com/fgimian/painter>`_.
+
 """
 import sys
 from setuptools import setup
@@ -108,7 +120,7 @@ if sys.platform == 'win32':
 
 setup(
     name='painter',
-    version='0.3-dev',
+    version='0.3',
     url='https://github.com/fgimian/painter',
     license='MIT',
     author='Fotis Gimian',
