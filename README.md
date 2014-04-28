@@ -242,6 +242,29 @@ from painter import styles
 print(styles.red.open + 'Some red text' + styles.red.close)
 ```
 
+#### Lower-level Access to Patterns ####
+
+Similarly to styles, you may access the callable required to generate any
+pattern using the **styles** member variable too.
+
+e.g.
+
+``` python
+print(paint.patterns.rainbow('Some red text'))
+```
+
+In this case, accessing the item directly doesn't really provide any useful
+benefit over calling it directly from the paint instance.
+
+However, you can import the patterns instance and use directly without
+going through the paint instance:
+
+``` python
+from painter import patterns, styles
+
+print(patterns.rainbow('Some red text', styles))
+```
+
 #### Stripping Color from Strings ####
 
 You may also easily strip color from a string by importing and using the
