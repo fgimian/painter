@@ -14,9 +14,9 @@ def main():
         input = None
 
     if '-h' in sys.argv or '--help' in sys.argv:
-        print('strip-ansi <input file> > <output file>')
+        print('strip-color <input file> > <output file>')
         print('or')
-        print('cat <input file> | strip-ansi > <output file>')
+        print('cat <input file> | strip-color > <output file>')
     elif '-v' in sys.argv or '--version' in sys.argv:
         print(__version__)
     elif input:
