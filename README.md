@@ -72,7 +72,7 @@ paint.enabled = True
 print('Hope you have a', paint.blue('lovely day!'), paint.green(':)'))
 ```
 
-The output of this script looks something like this:
+The output of the script above looks something like this:
 
 ![Painter Demo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_demo.png)
 
@@ -80,15 +80,17 @@ The output of this script looks something like this:
 
 ### The Painter ###
 
+Start by importing your painter as follows:
+
 ``` python
 from painter import paint
 ```
 
 #### Generating Colored Text ####
 
-You may now use the paint instance for all your painting needs.  Simply chain
-any combination of a foreground color, a background color, style modifiers
-and color patterns.
+You may now use the **paint** instance for all your painting needs.  Simply
+chain any combination of a foreground color, a background color, style
+modifiers and color patterns.
 
 The following are available:
 
@@ -161,8 +163,8 @@ An example of a blue zebra effect would be:
 print(paint.zebra.blue('Look, a blue zebra!'))
 ```
 
-Multiple arguments can be passed to the returned object which allow for nesting
-of styles.
+Multiple arguments can be passed to the returned object which allows for
+nesting of styles.
 
 For example, let's print various text colors on a red background:
 
@@ -184,7 +186,7 @@ white space.  However, you can customise this similarly to the way you do
 with the print function using the **sep** keyword argument.
 
 ``` python
-print('Hello', paint.cyan('there'), paint.green('buddy'), sep='_')
+print(paint('Hello', paint.cyan('there'), paint.green('buddy'), sep='_'))
 ```
 
 #### Creating Custom Themes ####
@@ -199,7 +201,7 @@ background:
 theme = paint.red.on_magenta.bold
 ```
 
-Simply calling this variable with text from now on will render that style.
+Simply calling this variable with text from now on will render that style:
 
 ``` python
 print(theme('My special little theme'))
@@ -217,8 +219,8 @@ print(theme_bg(theme_text_a('Hello'), theme_text_b('world!')))
 #### Color Support & Enabling or Disabling Colors ####
 
 By default, Painter will attempt to detect if your OS supports colors.  You
-may verify the detected color ability by importing the **supports_color**
-function.
+may verify your OS's color ability by importing the **supports_color**
+function:
 
 ``` python
 from painter import supports_color
@@ -254,7 +256,7 @@ e.g.
 print(paint.styles.red.open + 'Some red text' + paint.styles.red.close)
 ```
 
-Furthermore, you can import the styles instance and use directly without
+Furthermore, you can import the styles instance and use it directly without
 going through the paint instance:
 
 ``` python
@@ -266,7 +268,7 @@ print(styles.red.open + 'Some red text' + styles.red.close)
 #### Lower-level Access to Patterns ####
 
 Similarly to styles, you may access the callable required to generate any
-pattern using the **styles** member variable too.
+pattern using the **patterns** member variable.
 
 e.g.
 
@@ -277,7 +279,7 @@ print(paint.patterns.rainbow('Some red text'))
 In this case, accessing the item directly doesn't really provide any useful
 benefit over calling it directly from the paint instance.
 
-However, you can import the patterns instance and use directly without
+However, you can import the patterns instance and use it directly without
 going through the paint instance:
 
 ``` python
@@ -352,7 +354,8 @@ You may de-register a custom pattern at any time using the deregister function:
 paint.patterns.deregister('voweler')
 ```
 
-If you have imported patterns directly, then registration is identical:
+If you have imported the **patterns** instance directly, then registration is
+identical:
 
 ``` python
 patterns.register('voweler', underline_vowels)
@@ -384,7 +387,8 @@ more details.
 
 *You can click a version name to see a diff with the previous one.*
 
-* ***[0.3.1](https://github.com/fgimian/painter/compare/v0.3...master) (TBA)***
+* ***[0.3.2-dev](https://github.com/fgimian/painter/compare/v0.3.1...master) (TBA)***
+* ***[0.3.1](https://github.com/fgimian/painter/compare/v0.3...v0.3.1) (2014-04-29)***
     * Made strip-color CLI script more robust when errors occur
 * ***[0.3](https://github.com/fgimian/painter/compare/v0.2...v0.3) (2014-04-28)***
     * Implemented coloring support for Windows using the colorama library.
