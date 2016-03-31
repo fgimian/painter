@@ -6,7 +6,6 @@ from .supports_color import supports_color
 
 
 class Painter(object):
-
     def __init__(self, styles, patterns, applied_styles=[], enabled=True):
         self.styles = styles
         self.patterns = patterns
