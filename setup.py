@@ -1,4 +1,4 @@
-"""
+"""  # noqa
 Painter
 -------
 
@@ -120,7 +120,7 @@ if sys.platform == 'win32':
 
 setup(
     name='painter',
-    version='0.3.2-dev',
+    version='0.3.2.dev0',
     url='https://github.com/fgimian/painter',
     license='MIT',
     author='Fotis Gimian',
