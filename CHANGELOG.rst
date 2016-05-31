@@ -3,8 +3,8 @@ Changelog
 
 *You can click a version to see a diff with the previous release.*
 
-`0.3.2-dev <https://github.com/fgimian/painter/compare/v0.3.1...master>`_
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+`Unreleased <https://github.com/fgimian/painter/compare/v0.3.1...master>`_
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - TBA
 
