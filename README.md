@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://pypi.python.org/pypi/painter/)
 [![Latest Version](https://img.shields.io/pypi/v/painter.svg)](https://pypi.python.org/pypi/painter/)
 
-[![Painter Logo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_logo.png)
+![Painter Logo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter-logo.png)
 
 Awesome artwork provided courtesy of
 [Open Clip Art Library](http://openclipart.org/detail/174634/painter-penguin-by-moini-174634)
@@ -73,7 +73,7 @@ print('Hope you have a', paint.blue('lovely day!'), paint.green(':)'))
 
 The output of the script above looks something like this:
 
-![Painter Demo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_demo.png)
+![Painter Demo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter-demo.png)
 
 ## Usage ##
 
