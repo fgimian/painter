@@ -3,11 +3,10 @@
 
 [![Build Status](https://travis-ci.org/fgimian/painter.png?branch=master)](https://travis-ci.org/fgimian/painter)
 [![Coverage Status](https://coveralls.io/repos/fgimian/painter/badge.png)](https://coveralls.io/r/fgimian/painter)
-[![License](https://pypip.in/license/painter/badge.png)](https://pypi.python.org/pypi/painter/)
-[![Latest Version](https://pypip.in/version/painter/badge.png)](https://pypi.python.org/pypi/painter/)
-[![Downloads](https://pypip.in/download/painter/badge.png)](https://pypi.python.org/pypi/painter/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://pypi.python.org/pypi/painter/)
+[![Latest Version](https://img.shields.io/pypi/v/painter.svg)](https://pypi.python.org/pypi/painter/)
 
-![Painter Logo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_logo.png)
+[![Painter Logo](https://raw.githubusercontent.com/fgimian/painter/master/images/painter_logo.png)
 
 Awesome artwork provided courtesy of
 [Open Clip Art Library](http://openclipart.org/detail/174634/painter-penguin-by-moini-174634)
