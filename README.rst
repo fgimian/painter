@@ -1,14 +1,28 @@
-.. image:: https://raw.githubusercontent.com/fgimian/painter/master/images/painter-logo.png
-    :alt: Painter Logo
+Painter
+=======
 
-Introduction
-------------
+|Build Status| |Coverage Status| |License| |Latest Version|
+
+.. |Build Status| image:: https://travis-ci.org/fgimian/painter.png?branch=master
+   :target: https://travis-ci.org/fgimian/painter
+.. |Coverage Status| image:: https://coveralls.io/repos/fgimian/painter/badge.svg
+   :target: https://coveralls.io/r/fgimian/painter
+.. |License| image:: https://img.shields.io/badge/license-MIT-blue.svg
+   :target: https://pypi.python.org/pypi/painter/
+.. |Latest Version| image:: https://img.shields.io/pypi/v/painter.svg
+   :target: https://pypi.python.org/pypi/painter/
+
+.. image:: https://raw.githubusercontent.com/fgimian/painter/master/images/painter-logo.png
+   :alt: Painter Logo
+
+Awesome artwork provided courtesy of `Open Clip Art
+Library <http://openclipart.org/detail/174634/painter-penguin-by-moini-174634>`_
 
 Painter is an ANSI coloring library based on the excellent
 `chalk <https://github.com/sindresorhus/chalk>`_ and
-`colors.js <https://github.com/marak/colors.js/>`_
-libraries for Node.js.  However, painter attempts to provide an even more
-expressive API which reads like English.
+`colors.js <https://github.com/marak/colors.js/>`_ libraries for
+Node.js. However, painter attempts to provide an even more expressive
+API which reads like English.
 
 Painter is fully tested with 100% coverage and also completely Flake8
 compliant too!
@@ -68,10 +82,31 @@ And now, go ahead and use it to output colors to your terminal:
 The output of the script above looks something like this:
 
 .. image:: https://raw.githubusercontent.com/fgimian/painter/master/images/painter-demo.png
-    :alt: Painter Demo
+   :alt: Painter Demo
 
-Documentation
+Please see the `usage documentation <https://github.com/fgimian/painter/blob/master/USAGE.rst>`_
+for further instruction.
+
+Running Tests
 -------------
 
-For full details on using Painter, please check out the
-`Painter GitHub Page <https://github.com/fgimian/painter>`_.
+You may run the unit tests as follows:
+
+.. code:: bash
+
+    git clone https://github.com/fgimian/painter.git
+    cd painter
+    python setup.py test
+
+You may validate Flake8 compatibility as follows:
+
+.. code:: bash
+
+    python setup.py flake8
+
+License
+-------
+
+Painter is released under the **MIT** license. Please see the
+`LICENSE <https://github.com/fgimian/painter/blob/master/LICENSE>`_
+file for more details.

@@ -21,8 +21,8 @@ install_requires = []
 if sys.platform == 'win32':
     install_requires.append('colorama')
 
-# Read the long description from readme.rst
-with open('setup.rst') as f:
+# Read the long description from README.rst
+with open('README.rst') as f:
     long_description = f.read()
 
 
