@@ -2,7 +2,7 @@
 *Your own expressive painter who colors text in your terminal*
 
 [![Build Status](https://travis-ci.org/fgimian/painter.png?branch=master)](https://travis-ci.org/fgimian/painter)
-[![Coverage Status](https://coveralls.io/repos/fgimian/painter/badge.png)](https://coveralls.io/r/fgimian/painter)
+[![Coverage Status](https://coveralls.io/repos/fgimian/painter/badge.svg)](https://coveralls.io/r/fgimian/painter)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://pypi.python.org/pypi/painter/)
 [![Latest Version](https://img.shields.io/pypi/v/painter.svg)](https://pypi.python.org/pypi/painter/)
 
