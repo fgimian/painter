@@ -3,7 +3,7 @@ Painter
 
 |Build Status| |Coverage Status| |License| |Latest Version|
 
-.. |Build Status| image:: https://travis-ci.org/fgimian/painter.png?branch=master
+.. |Build Status| image:: https://travis-ci.org/fgimian/painter.svg?branch=master
    :target: https://travis-ci.org/fgimian/painter
 .. |Coverage Status| image:: https://coveralls.io/repos/fgimian/painter/badge.svg
    :target: https://coveralls.io/r/fgimian/painter
