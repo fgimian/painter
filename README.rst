@@ -15,7 +15,7 @@ Painter
 .. image:: https://raw.githubusercontent.com/fgimian/painter/master/images/painter-logo.png
    :alt: Painter Logo
 
-Awesome artwork provided courtesy of `Open Clip Art
+Artwork courtesy of `Open Clip Art
 Library <http://openclipart.org/detail/174634/painter-penguin-by-moini-174634>`_
 
 Introduction
