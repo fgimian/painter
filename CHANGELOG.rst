@@ -1,19 +1,21 @@
 Changelog
 ---------
 
-*You can click a version to see a diff with the previous release.*
-
-`Unreleased <https://github.com/fgimian/painter/compare/v0.3.1...master>`_
+`Unreleased <https://github.com/fgimian/painter/tree/master>`_
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - TBA
 
-`0.3.1 <https://github.com/fgimian/painter/compare/v0.3...v0.3.1>`_ (2014-04-29)
+`Full Source Code Changelog <https://github.com/fgimian/painter/compare/v0.3.1...master>`_
+
+`0.3.1 <https://github.com/fgimian/painter/releases/tag/v0.3.1>`_ (2014-04-29)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Made strip-color CLI script more robust when errors occur
 
-`0.3 <https://github.com/fgimian/painter/compare/v0.2...v0.3>`_ (2014-04-28)
+`Full Source Code Changelog <https://github.com/fgimian/painter/compare/v0.3...v0.3.1>`_
+
+`0.3 <https://github.com/fgimian/painter/releases/tag/v0.3>`_ (2014-04-28)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 - Implemented coloring support for Windows using the colorama
@@ -30,7 +32,9 @@ Changelog
   with Painter.
 - Several bug fixes.
 
-0.2 (2014-04-26)
+`Full Source Code Changelog <https://github.com/fgimian/painter/compare/v0.2...v0.3>`_
+
+`0.2 <https://github.com/fgimian/painter/releases/tag/v0.2>`_ (2014-04-26)
 ++++++++++++++++
 
 - Initial release

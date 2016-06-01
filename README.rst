@@ -8,7 +8,7 @@ Painter
 .. |Coverage Status| image:: https://coveralls.io/repos/fgimian/painter/badge.svg
    :target: https://coveralls.io/r/fgimian/painter
 .. |License| image:: https://img.shields.io/badge/license-MIT-blue.svg
-   :target: https://pypi.python.org/pypi/painter/
+   :target: https://github.com/fgimian/painter/blob/master/LICENSE
 .. |Latest Version| image:: https://img.shields.io/pypi/v/painter.svg
    :target: https://pypi.python.org/pypi/painter/
 
@@ -17,6 +17,9 @@ Painter
 
 Awesome artwork provided courtesy of `Open Clip Art
 Library <http://openclipart.org/detail/174634/painter-penguin-by-moini-174634>`_
+
+Introduction
+------------
 
 Painter is an ANSI coloring library based on the excellent
 `chalk <https://github.com/sindresorhus/chalk>`_ and
@@ -84,8 +87,11 @@ The output of the script above looks something like this:
 .. image:: https://raw.githubusercontent.com/fgimian/painter/master/images/painter-demo.png
    :alt: Painter Demo
 
-Please see the `usage documentation <https://github.com/fgimian/painter/blob/master/USAGE.rst>`_
-for further instruction.
+Documentation
+-------------
+
+Please check out the `Painter Usage documentation
+<https://github.com/fgimian/painter/blob/master/USAGE.rst/>`_.
 
 Running Tests
 -------------
