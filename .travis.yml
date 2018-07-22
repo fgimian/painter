@@ -3,11 +3,16 @@ python:
   - 2.6
   - 2.7
   - 3.3
+  - 3.4
+  - 3.5
+  - 3.6
+  - 3.7
   - pypy
+  - pypy3
 
 install:
-  # Install the Coveralls library
-  - pip install coveralls
+  # Install the codecov library
+  - pip install codecov
 
 script:
   # Validate code with flake8
@@ -17,8 +22,8 @@ script:
   - python setup.py test
 
 after_success:
-  # Send coverage statistics to Coveralls
-  coveralls
+  # Send coverage statistics to codecov
+  codecov
 
 notifications:
   # Disable email notifications if something fails

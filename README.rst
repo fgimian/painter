@@ -5,8 +5,8 @@ Painter
 
 .. |Build Status| image:: https://travis-ci.org/fgimian/painter.svg?branch=master
    :target: https://travis-ci.org/fgimian/painter
-.. |Coverage Status| image:: https://coveralls.io/repos/fgimian/painter/badge.svg
-   :target: https://coveralls.io/r/fgimian/painter
+.. |Coverage Status| image:: https://codecov.io/gh/fgimian/painter/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/fgimian/painter
 .. |License| image:: https://img.shields.io/badge/license-MIT-blue.svg
    :target: https://github.com/fgimian/painter/blob/master/LICENSE
 .. |Latest Version| image:: https://img.shields.io/pypi/v/painter.svg
