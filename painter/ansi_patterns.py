@@ -77,4 +77,5 @@ class AnsiPatterner(object):
             (self.__class__.__name__, sorted(list(self.patterns)))
         )
 
+
 patterns = AnsiPatterner(ANSI_FUNCTIONS, ansi_styles)

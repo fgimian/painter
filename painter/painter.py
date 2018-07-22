@@ -52,6 +52,7 @@ class Painter(object):
             (self.__class__.__name__, self.applied_styles)
         )
 
+
 # Enable ANSI coloring on Windows using Colorama
 if sys.platform == 'win32':  # pragma: nocover
     import colorama

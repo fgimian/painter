@@ -103,4 +103,5 @@ class AnsiStyler(object):
             (self.__class__.__name__, sorted(list(self.styles)))
         )
 
+
 styles = AnsiStyler(ANSI_CODES)
